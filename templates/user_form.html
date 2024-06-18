@@ -1,0 +1,60 @@
+{% include "header.html" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">{{ action }} User</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ url_for('login') }}">Home</a></li>
+            <li class="breadcrumb-item active">{{ action }} User</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                  {{ form.username.label(class="form-label") }}
+                  {{ form.username(class="form-control") }}
+                </div>
+                <div class="form-group">
+                  {{ form.email.label(class="form-label") }}
+                  {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                  {{ form.password.label(class="form-label") }}
+                  {{ form.password(class="form-control") }}
+                </div>
+                <div class="form-group">
+                  {{ form.poin.label(class="form-label") }}
+                  {{ form.poin(class="form-control") }}
+                </div>
+                <div class="form-group">
+                  {{ form.submit(class="btn btn-primary") }}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+
+{% include "footer.html" %}
